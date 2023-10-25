@@ -1,0 +1,149 @@
+/* Réinitialisation des styles CSS pour une meilleure compatibilité entre navigateurs */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background-color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #122236;
+
+    min-height: 80vh;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+h1 {
+    font-size: 24pt;
+    font-weight: 700;
+}
+
+p, button {
+    font-size: 13pt;
+    font-weight: 300;
+}
+
+.generator {
+    width: 800px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items: center;
+    gap: 40px;
+}
+
+.result {
+    min-height: 250px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow:  inset 5px 5px 10px #bababa,
+                inset -5px -5px 10px #ffffff;
+    text-align: left;
+    padding: 40px;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        box-sizing:border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 40px;;
+}
+
+@media (max-width: 767px) {
+    .buttons {
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+    }
+}
+
+button {
+    width: 150px;
+    padding:10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow:  5px 5px 10px #bababa,
+                -5px -5px 10px #ffffff;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow:  inset 5px 5px 10px #bababa,
+                inset -5px -5px 10px #ffffff;
+}
+
+#standard {
+    font-weight: 700;
+    flex-grow: 1;
+}
+
+.copy {
+    align-self: center;
+}
+
+
+
+
+/*ANimation*/
+:root {
+    --main-color: #ecf0f1;
+    --point-color: #555;
+    --size: 5px;
+  }
+  
+  .loader {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    align-content: center; 
+    justify-content: center;  
+    z-index: 100000;
+  }
+  
+  .loader__element {
+    border-radius: 100%;
+    border: var(--size) solid var(--point-color);
+    margin: calc(var(--size)*2);
+  }
+  
+  .loader__element:nth-child(1) {
+    animation: preloader .6s ease-in-out alternate infinite;
+  }
+  .loader__element:nth-child(2) {
+    animation: preloader .6s ease-in-out alternate .2s infinite;
+  }
+  
+  .loader__element:nth-child(3) {
+    animation: preloader .6s ease-in-out alternate .4s infinite;
+  }
+  
+  @keyframes preloader {
+    100% { transform: scale(2); }
+  }

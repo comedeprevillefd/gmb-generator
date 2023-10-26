@@ -37,6 +37,7 @@ h1 {
 p, button {
     font-size: 13pt;
     font-weight: 300;
+    line-height: 30px;
 }
 
 .generator {
@@ -70,7 +71,7 @@ p, button {
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 100%;
     gap: 40px;;
 }
@@ -84,7 +85,7 @@ p, button {
 }
 
 button {
-    width: 150px;
+    min-width: 150px;
     padding:10px 20px;
     border: none;
     border-radius: 20px;
@@ -99,17 +100,10 @@ button:hover {
                 inset -5px -5px 10px #ffffff;
 }
 
-#standard {
-    font-weight: 700;
-    flex-grow: 1;
-}
-
-.copy {
+.result > a, .copy, #publish {
     align-self: center;
+    font-weight: 700;
 }
-
-
-
 
 /*ANimation*/
 :root {

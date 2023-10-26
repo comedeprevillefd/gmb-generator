@@ -105,6 +105,10 @@ button:hover {
     font-weight: 700;
 }
 
+#publish, .result > a {
+  color: #1BA1DC;
+}
+
 /*ANimation*/
 :root {
     --main-color: #ecf0f1;

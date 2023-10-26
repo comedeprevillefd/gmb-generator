@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const resultDiv = document.querySelector('.result');
 
@@ -100,6 +99,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     event.target.style.boxShadow = "5px 5px 10px #bababa, -5px -5px 10px #ffffff";
                     event.target.disabled = false; // Réactive le bouton
                 }, 2000);
+
+                // Attendez 0.5 seconde avant de supprimer le contenu
+                setTimeout(function() {
+                    removeAllContent(resultDiv);
+                }, 500);
             }
         }
     });
@@ -111,5 +115,38 @@ document.addEventListener('DOMContentLoaded', function() {
         textarea.select();
         document.execCommand('copy');
         document.body.removeChild(textarea);
+    }
+
+    function removeAllContent(element) {
+        // Supprime tout le contenu de l'élément
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+        }
+
+        // Crée un nouveau paragraphe
+        const validationParagraph = document.createElement('p');
+        validationParagraph.id = "validation";
+        validationParagraph.textContent = "L'avis a été copié dans votre presse-papier. Il ne vous reste plus qu'à le publier dans un avis Google ! Vous pouvez vous y rendre en cliquant sur le lien ci-dessous. N'hésitez pas à apporter quelques modifications, après tout c'est votre nom qui sera affiché :)";
+
+        // Crée un bouton "Publish"
+        const publishButton = document.createElement('button');
+        publishButton.id = "publish";
+        publishButton.textContent = "Page des avis Four Data";
+        publishButton.addEventListener('click', function() {
+            publishButton.textContent = "✓ Page des avis Four Data";
+            setTimeout(function() {
+                publishButton.textContent = "Page des avis Four Data";
+            }, 2000);
+        });
+
+        // Crée un lien pour le bouton "Publish"
+        const link = document.createElement('a');
+        link.href = "https://g.page/r/CZcuqh3zwT4sEAI/review";
+        link.target = "_blank";
+        link.appendChild(publishButton);
+
+        // Ajoute le paragraphe et le bouton à la div .result
+        element.appendChild(validationParagraph);
+        element.appendChild(link);
     }
 });

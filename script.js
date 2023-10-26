@@ -131,11 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Crée un bouton "Publish"
         const publishButton = document.createElement('button');
         publishButton.id = "publish";
-        publishButton.textContent = "Page des avis Four Data";
+        publishButton.textContent = "↗ Publier mon avis";
         publishButton.addEventListener('click', function() {
-            publishButton.textContent = "✓ Page des avis Four Data";
+            publishButton.textContent = "✓ Publier mon avis";
             setTimeout(function() {
-                publishButton.textContent = "Page des avis Four Data";
+                publishButton.textContent = "↗ Publier mon avis";
             }, 2000);
         });
 
